@@ -1,0 +1,8 @@
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+rating-sheet.pdf
+untappd-qr.svg
+_external/*
+!_external/manifest.md

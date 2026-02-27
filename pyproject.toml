@@ -1,0 +1,12 @@
+[project]
+name = "matt-beer-tasting"
+version = "0.1.0"
+description = "Matt's 50th birthday beer tasting - rating card and planning"
+requires-python = ">=3.11"
+dependencies = [
+    "weasyprint>=68.0",
+    "qrcode[pil]>=8.0",
+]
+
+[dependency-groups]
+dev = []
