@@ -4,5 +4,6 @@ __pycache__/
 .venv/
 rating-sheet.pdf
 untappd-qr.svg
+dist/
 _external/*
 !_external/manifest.md
