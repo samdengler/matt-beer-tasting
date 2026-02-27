@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Presenter Notes - A Few Small Beers</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Libre+Baskerville:ital@0;1&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    color: #1a1a1a;
+    background: #1a1a1a;
+  }
+
+  .slide {
+    min-height: 100vh;
+    min-height: 100dvh;
+    background: #f5f0eb;
+    padding: 1.5rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    scroll-snap-align: start;
+  }
+
+  .slide + .slide {
+    border-top: 4px solid #1a1a1a;
+  }
+
+  .slide-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid #1a1a1a;
+  }
+
+  .slide-header img {
+    width: 56px;
+    height: 56px;
+    object-fit: cover;
+    border-radius: 6px;
+    flex-shrink: 0;
+  }
+
+  .slide-header .num {
+    font-family: 'Oswald', Impact, sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: #ccc;
+    line-height: 1;
+    flex-shrink: 0;
+    width: 2rem;
+  }
+
+  .slide-header .title-block {
+    min-width: 0;
+  }
+
+  .slide-header h2 {
+    font-family: 'Oswald', Impact, sans-serif;
+    font-weight: 700;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.1;
+  }
+
+  .slide-header .meta {
+    font-size: 0.7rem;
+    color: #666;
+    margin-top: 0.15rem;
+  }
+
+  .notes {
+    flex: 1;
+    font-size: 0.85rem;
+    line-height: 1.55;
+    color: #333;
+  }
+
+  .notes h3 {
+    font-family: 'Oswald', Impact, sans-serif;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #999;
+    margin-top: 1rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .notes h3:first-child {
+    margin-top: 0;
+  }
+
+  .notes p {
+    margin-bottom: 0.5rem;
+  }
+
+  .notes .kicker {
+    font-style: italic;
+    color: #666;
+    font-size: 0.8rem;
+    margin-top: 0.75rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid #ddd;
+  }
+
+  .notes strong {
+    color: #1a1a1a;
+  }
+
+  .slide-nav {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding-top: 0.5rem;
+  }
+
+  .slide-nav a {
+    font-family: 'Oswald', Impact, sans-serif;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #999;
+    text-decoration: none;
+    padding: 0.25rem 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+
+  .slide-nav a.current {
+    color: #1a1a1a;
+    border-color: #1a1a1a;
+  }
+
+  html {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+  }
+
+  @media print {
+    .slide { page-break-after: always; min-height: auto; padding: 0.5in; }
+    .slide:last-child { page-break-after: avoid; }
+    .slide-nav { display: none; }
+    html { scroll-snap-type: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- BEER 1 -->
+<div class="slide" id="beer1">
+  <div class="slide-header">
+    <img src="images/vary.jpeg" alt="">
+    <div class="title-block">
+      <h2>Vary</h2>
+      <div class="meta">Halfway Crooks &middot; Czech Pilsner &middot; 5.0%</div>
+    </div>
+  </div>
+  <div class="notes">
+    <h3>The Brewery</h3>
+    <p>Halfway Crooks is in Summerhill, Atlanta — on the site of the old Olympic stadium. The name comes from Mobb Deep's "Shook Ones Pt. II": <em>"ain't no such thing as halfway crooks."</em> Translation: these guys don't cut corners.</p>
+    <p>Founded by three unlikely partners: a <strong>Georgia Tech engineer</strong>, a <strong>Belgian sheep farmer's son</strong> who went to brewing school (his uncle is the legendary former brewmaster of New Belgium), and a <strong>retired ER doctor</strong>. They met at Brick Store Pub bonding over Belgian beer, became roommates, and started brewing in a basement.</p>
+
+    <h3>Why This Beer</h3>
+    <p>We're starting light and classic. Before 1842, beer in the Czech city of Plze&#x148; was so bad that townspeople <strong>dumped 36 barrels in front of City Hall</strong> in protest. The city hired a Bavarian to fix it. He combined Plze&#x148;'s impossibly soft water, pale malt, and local Saaz hops — and accidentally invented the world's first golden lager. People lost their minds. Up until then, basically all beer was dark and cloudy.</p>
+    <p>"Vary" is a nod to <strong>Karlovy Vary</strong>, the famous Czech spa town — but also to "var," a programming variable (the engineer co-founder's fingerprint). They <strong>super-boil</strong> this one — an old Czech technique where you pull part of the mash out, boil it violently, and add it back. Way more work. Develops the honey and shortbread character you'll taste.</p>
+
+    <p class="kicker">Tell them: "This is the beer that started a revolution in 1842. Taste that bread crust and honey sweetness — that's what happens when you do things the hard way."</p>
+  </div>
+  <div class="slide-nav">
+    <a href="#beer1" class="current">1</a>
+    <a href="#beer2">2</a>
+    <a href="#beer3">3</a>
+    <a href="#beer4">4</a>
+    <a href="#beer5">5</a>
+    <a href="#beer6">6</a>
+  </div>
+</div>
+
+<!-- BEER 2 -->
+<div class="slide" id="beer2">
+  <div class="slide-header">
+    <img src="images/beyond.jpeg" alt="">
+    <div class="title-block">
+      <h2>Beyond The Edge Of Existence</h2>
+      <div class="meta">Little Cottage &middot; ESB &middot; 4.8%</div>
+    </div>
+  </div>
+  <div class="notes">
+    <h3>The Brewery</h3>
+    <p>Little Cottage is in Avondale Estates — <strong>a heavy metal themed nano-brewery</strong> run by a former lawn care guy. Jon Shari spent 25 years mowing lawns. His wife gave him a homebrew kit as a Father's Day gift in 2012. They both lost their jobs during COVID and decided to go all-in on the brewery. Named after the tiny cottage in Sandy Springs where he started brewing on a 7-gallon rig.</p>
+    <p>The operation is <strong>3.5 barrels</strong> — about 108 gallons per batch. For reference, most craft breweries run 15-30 barrel systems. Despite being tiny, <strong>USA Today named them the 6th Best New Brewery of 2022</strong>.</p>
+
+    <h3>Why This Beer</h3>
+    <p>"Extra Special Bitter" sounds aggressive. It's not. In British pubs, "bitter" is just what they call the standard amber ale. ESB is the fancy version — the reserve bottle. The bitterness is actually <strong>moderate and balanced</strong>.</p>
+    <p>The style was essentially invented by <strong>Fuller's in West London in 1971</strong>. They've been brewing on the same site since 1845. Their ESB won "Champion Beer of Britain" three times — more than any other beer.</p>
+    <p>And yes — the name "Beyond The Edge Of Existence" is pure metal, for what is basically a <strong>4.8% session beer</strong> a British pub would be proud of. That mismatch is very on-brand for Little Cottage.</p>
+
+    <p class="kicker">Tell them: "A metal brewery run by a former lawn mower named this gentle English pub ale 'Beyond The Edge Of Existence.' That's the kind of energy we need at 50."</p>
+  </div>
+  <div class="slide-nav">
+    <a href="#beer1">1</a>
+    <a href="#beer2" class="current">2</a>
+    <a href="#beer3">3</a>
+    <a href="#beer4">4</a>
+    <a href="#beer5">5</a>
+    <a href="#beer6">6</a>
+  </div>
+</div>
+
+<!-- BEER 3 -->
+<div class="slide" id="beer3">
+  <div class="slide-header">
+    <img src="images/memory.jpeg" alt="">
+    <div class="title-block">
+      <h2>Memory</h2>
+      <div class="meta">Halfway Crooks &middot; Saison &middot; 7.1%</div>
+    </div>
+  </div>
+  <div class="notes">
+    <h3>The Style</h3>
+    <p>"Saison" means "season" in French. These were brewed on Belgian farms for <strong>field workers to drink during harvest</strong>. Before clean water was reliable, low-alcohol beer was the safe option. The originals were probably 3-4% — just enough to kill bacteria, not enough to have your workers falling into the thresher.</p>
+    <p>Saison yeast is the star — it's aggressive, hungry, and produces that signature <strong>peppery, fruity character</strong>. Ask ten brewers to define saison and you'll get twelve answers. Every farm made their own version with whatever they had.</p>
+
+    <h3>Why This Beer</h3>
+    <p>This is Halfway Crooks' other side — their mixed-fermentation program. Memory is <strong>foeder-aged</strong>: aged in a huge oak vessel (think wine barrel's big brother) where wild yeast and bacteria slowly develop complex, funky flavors. Then <strong>re-fermented on Georgia peaches from Pearson Farm</strong> in Fort Valley — a real place, real peaches, not flavoring.</p>
+    <p>When beer people say "funky," they mean <strong>Brettanomyces</strong> — a wild yeast most brewers consider a contaminant. It produces flavors like barnyard, leather, wet hay. Sounds terrible. Tastes incredible here. The peach and the funk meet somewhere beautiful.</p>
+    <p>There's a companion beer called <strong>"Seconds"</strong> — made with the same peaches after they've already been used for Memory. Literally the leftovers. Still great.</p>
+
+    <p class="kicker">Tell them: "This one's alive. The yeast that makes it funky would ruin most beers. Here it's the whole point. If the pilsner was a sharp suit, this is barefoot in a field."</p>
+  </div>
+  <div class="slide-nav">
+    <a href="#beer1">1</a>
+    <a href="#beer2">2</a>
+    <a href="#beer3" class="current">3</a>
+    <a href="#beer4">4</a>
+    <a href="#beer5">5</a>
+    <a href="#beer6">6</a>
+  </div>
+</div>
+
+<!-- BEER 4 -->
+<div class="slide" id="beer4">
+  <div class="slide-header">
+    <img src="images/helix.jpeg" alt="">
+    <div class="title-block">
+      <h2>Helix</h2>
+      <div class="meta">Inner Voice &middot; Hazy IPA &middot; 6.0%</div>
+    </div>
+  </div>
+  <div class="notes">
+    <h3>The Brewery</h3>
+    <p>Inner Voice is in downtown Decatur, founded by <strong>Rhett Caseman and Josh Johnson</strong> — both former brewers at Monday Night Brewing. The name comes from a <strong>Funkadelic deep cut</strong>: George Clinton's "Good Thoughts, Bad Thoughts" — <em>"Listen to the inner voice."</em> They listened, quit their jobs, and signed a lease in January 2020. Then COVID happened. They finally opened in September 2021.</p>
+
+    <h3>The Science</h3>
+    <p>These guys are brewing nerds. They use <strong>thiolized yeast</strong> — specially selected strains that amp up tropical fruit aromas at the molecular level. They've <strong>eliminated boil hop additions entirely</strong>, managing bitterness through advanced hop extracts and dry-hopping. They even add <strong>sea salt to their water</strong> (not for flavor — for chemistry). This is bleeding-edge IPA science.</p>
+
+    <h3>Why This Beer</h3>
+    <p>Hazy IPA (or "New England IPA") is the style that broke beer's brain about ten years ago. Traditional IPAs are clear and bitter. Hazys are <strong>opaque, juicy, and soft</strong> — more tropical smoothie than bitter bomb. The haze comes from proteins, hop oils, and yeast staying in suspension.</p>
+    <p>Helix is brewed with oats and wheat, dry-hopped with <strong>Simcoe and Idaho 7</strong>. Expect grapefruit and pine up front, then a soft, creamy finish. No harsh bitterness. If someone at this table "doesn't like IPAs," this might change their mind.</p>
+
+    <p class="kicker">Tell them: "Two guys named their brewery after a Funkadelic lyric, quit their jobs right before a pandemic, and use lab-engineered yeast that would confuse a biochemist. The beer tastes like a tropical vacation."</p>
+  </div>
+  <div class="slide-nav">
+    <a href="#beer1">1</a>
+    <a href="#beer2">2</a>
+    <a href="#beer3">3</a>
+    <a href="#beer4" class="current">4</a>
+    <a href="#beer5">5</a>
+    <a href="#beer6">6</a>
+  </div>
+</div>
+
+<!-- BEER 5 -->
+<div class="slide" id="beer5">
+  <div class="slide-header">
+    <img src="images/mango-lassi.jpeg" alt="">
+    <div class="title-block">
+      <h2>Mango Lassi Sunset</h2>
+      <div class="meta">Inner Voice &middot; Smoothie Sour &middot; 6.0%</div>
+    </div>
+  </div>
+  <div class="notes">
+    <h3>What Is This</h3>
+    <p>Okay, this is the wild card. A <strong>"smoothie sour"</strong> is exactly what it sounds like — a sour beer blended with absurd amounts of fruit puree until it has the consistency of, well, a smoothie. This is the most polarizing style in craft beer right now. Beer purists hate it. Everyone else loves it.</p>
+    <p>This one is inspired by a <strong>mango lassi</strong> — the Indian yogurt drink. Loaded with mango puree and fresh coconut. Tropical, tart, creamy. It's basically a cocktail pretending to be a beer.</p>
+
+    <h3>The Context</h3>
+    <p>Inner Voice makes a bigger version called <strong>Mega Mondo Mango Lassi at 8%</strong> that won an <strong>Untappd Silver Award in 2025</strong>. This is the 6% "sessionable" take — same concept, slightly less danger.</p>
+    <p>The smoothie sour trend emerged around 2018-2019 and divided the beer world in half. Some brewers think it's an abomination. Others think it's the most exciting thing to happen to beer in decades. The argument is essentially: <strong>does it have to taste like "beer" to be beer?</strong></p>
+
+    <h3>Why It's Here</h3>
+    <p>After a Czech lager, an English bitter, a farmhouse saison, and a hazy IPA, we needed something that blows up the format. This is that beer. It's also a crowd-pleaser — the person at this table who says "I don't really like beer" is about to have their mind changed.</p>
+
+    <p class="kicker">Tell them: "If someone tells you this isn't real beer, tell them neither was pilsner in 1841. Every great style started as something that annoyed the old guard."</p>
+  </div>
+  <div class="slide-nav">
+    <a href="#beer1">1</a>
+    <a href="#beer2">2</a>
+    <a href="#beer3">3</a>
+    <a href="#beer4">4</a>
+    <a href="#beer5" class="current">5</a>
+    <a href="#beer6">6</a>
+  </div>
+</div>
+
+<!-- BEER 6 -->
+<div class="slide" id="beer6">
+  <div class="slide-header">
+    <img src="images/abraxas.jpeg" alt="">
+    <div class="title-block">
+      <h2>Perennial Abraxas</h2>
+      <div class="meta">Perennial Artisan Ales &middot; Imperial Stout &middot; 10%</div>
+    </div>
+  </div>
+  <div class="notes">
+    <h3>The Legend</h3>
+    <p>This is one of the most famous beers in America. <strong>99 out of 100 on BeerAdvocate</strong> (the barrel-aged version has a perfect 100). It basically <strong>invented the "pastry stout" trend</strong> that took over craft beer.</p>
+    <p>The name came to founder Phil Wymore <strong>in a dream</strong>, inspired by the Santana album <em>Abraxas</em>, which was named after a Hermann Hesse novel, which referenced an <strong>ancient Gnostic deity who rules 365 heavens</strong> — one for each day of the year. That's three layers of cool.</p>
+
+    <h3>The Origin</h3>
+    <p>Before Perennial even opened, Wymore ran a blog contest asking fans what beer they wanted him to brew. Someone submitted <strong>"Mexican Chocolate Stout."</strong> Wymore built the recipe: <strong>ancho chili, cacao nibs, vanilla beans, cinnamon</strong>. The challenge was making each ingredient impactful without any one dominating. When it debuted at a St. Louis tasting event, people kept telling the organizers it was the best thing there. Fans were trading bottles nationally before the brewery even had distribution.</p>
+
+    <h3>The Birthday Closer</h3>
+    <p>Wymore trained at <strong>Goose Island</strong> under the barrel program that created Bourbon County Stout, then went and made a beer that rivals it. There's an annual <strong>Abraxas Week</strong> in St. Louis with variant releases — coffee, vanilla, maple, barrel-aged. The original still accounts for 9% of everything they brew, a decade later.</p>
+    <p>This is 10% ABV. It tastes like <strong>Mexican hot chocolate in a glass</strong>. The chili warmth hits at the end. This is how you close a birthday tasting.</p>
+
+    <p class="kicker">Tell them: "A fan literally invented this beer in a blog comment. The name came in a dream. It has a near-perfect score out of three thousand reviews. Happy birthday, Matt."</p>
+  </div>
+  <div class="slide-nav">
+    <a href="#beer1">1</a>
+    <a href="#beer2">2</a>
+    <a href="#beer3">3</a>
+    <a href="#beer4">4</a>
+    <a href="#beer5">5</a>
+    <a href="#beer6" class="current">6</a>
+  </div>
+</div>
+
+</body>
+</html>
