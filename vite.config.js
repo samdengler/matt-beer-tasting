@@ -7,7 +7,7 @@ export default defineConfig({
       input: {
         main: 'index.html',
         rating: 'rating-sheet.html',
-        presenter: 'presenter.html',
+        tastingNotes: 'tasting-notes.html',
       },
     },
   },
