@@ -116,7 +116,21 @@
     font-style: italic;
     color: #444;
     line-height: 1.3;
+    margin-bottom: 0.02in;
+  }
+
+  .paired-with {
+    font-size: 6.5pt;
+    color: #888;
+    line-height: 1.3;
     margin-bottom: 0.04in;
+  }
+
+  .paired-with .label {
+    font-family: 'Oswald', Impact, sans-serif;
+    font-size: 6pt;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
   }
 
   .rating-row {
@@ -194,26 +208,32 @@
     margin-top: 0.02in;
   }
 
-  .footer .qr-section {
+  .footer .qr-row {
     display: flex;
-    align-items: center;
     justify-content: center;
-    gap: 0.1in;
+    gap: 0.15in;
     margin-top: 0.06in;
   }
 
-  .footer .qr-section img {
-    width: 0.6in;
-    height: 0.6in;
+  .footer .qr-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.02in;
+  }
+
+  .footer .qr-item img {
+    width: 0.5in;
+    height: 0.5in;
   }
 
   .footer .qr-label {
     font-family: 'Oswald', Impact, sans-serif;
-    font-size: 6pt;
+    font-size: 5.5pt;
     text-transform: uppercase;
     color: #888;
-    text-align: left;
-    line-height: 1.3;
+    text-align: center;
+    line-height: 1.2;
   }
 
   .name-line {
@@ -258,11 +278,12 @@
 
 <!-- Beer 1 -->
 <div class="beer-card">
-  <div class="beer-num"><img src="images/vary.jpeg" alt="">1</div>
+  <div class="beer-num"><img src="images/cold-slice.jpeg" alt="">1</div>
   <div class="beer-info">
-    <div class="beer-name">Vary</div>
-    <div class="beer-meta">Halfway Crooks &middot; Czech Pilsner &middot; 5.0% <span class="untappd">Untappd 4.14</span></div>
-    <div class="beer-desc">Super boiled for more malt expression. Honey, shortbread, noble hops.</div>
+    <div class="beer-name">Cold Slice</div>
+    <div class="beer-meta">Inner Voice &middot; American Lager &middot; 4.5% <span class="untappd">Untappd 3.96</span></div>
+    <div class="beer-desc">Super crisp light lager. Corn and barley, naturally carbonated.</div>
+    <div class="paired-with"><span class="label">Paired with </span>Tieduprightnow — Parcels &middot; D.A.N.C.E. — Justice</div>
     <div class="rating-row">
       <span class="rating-label">Rating</span>
       <div class="beer-circles">
@@ -282,11 +303,12 @@
 
 <!-- Beer 2 -->
 <div class="beer-card">
-  <div class="beer-num"><img src="images/mavy.jpeg" alt="">2</div>
+  <div class="beer-num"><img src="images/chimay.jpeg" alt="">2</div>
   <div class="beer-info">
-    <div class="beer-name">Mavy</div>
-    <div class="beer-meta">Halfway Crooks &middot; Czech Dark Lager &middot; 4.8% <span class="untappd">Untappd 4.06</span></div>
-    <div class="beer-desc">Soft chocolate, slightly floral, plush body. A pilsner in a tuxedo.</div>
+    <div class="beer-name">Chimay Cinq Cents</div>
+    <div class="beer-meta">Scourmont Abbey &middot; Belgian Tripel &middot; 8% <span class="untappd">Untappd 3.72</span></div>
+    <div class="beer-desc">Trappist monks since 1862. Apricot, pear, peppery spice, dry finish.</div>
+    <div class="paired-with"><span class="label">Paired with </span>Band on the Run — Wings &middot; Breezeblocks — alt-J</div>
     <div class="rating-row">
       <span class="rating-label">Rating</span>
       <div class="beer-circles">
@@ -306,11 +328,12 @@
 
 <!-- Beer 3 -->
 <div class="beer-card">
-  <div class="beer-num"><img src="images/memory.jpeg" alt="">3</div>
+  <div class="beer-num"><img src="images/lora.jpeg" alt="">3</div>
   <div class="beer-info">
-    <div class="beer-name">Memory</div>
-    <div class="beer-meta">Halfway Crooks &middot; Saison &middot; 7.1% <span class="untappd">Untappd 3.99</span></div>
-    <div class="beer-desc">Foeder-aged saison re-fermented on peaches. Farmhouse funk meets stone fruit.</div>
+    <div class="beer-name">Fair Isle Lora</div>
+    <div class="beer-meta">Fair Isle Brewing &middot; Berry Field Blend &middot; 3.9% <span class="untappd">Untappd 4.08</span></div>
+    <div class="beer-desc">Wild-fermented berry field blend. Raspberry, boysenberry, tart, refreshing.</div>
+    <div class="paired-with"><span class="label">Paired with </span>Raspberry Beret — Prince &middot; Let's Dance to Joy Division — The Wombats</div>
     <div class="rating-row">
       <span class="rating-label">Rating</span>
       <div class="beer-circles">
@@ -330,11 +353,12 @@
 
 <!-- Beer 4 -->
 <div class="beer-card">
-  <div class="beer-num"><img src="images/cowpoke.jpeg" alt="">4</div>
+  <div class="beer-num"><img src="images/love-is-real.jpeg" alt="">4</div>
   <div class="beer-info">
-    <div class="beer-name">Cowpoke</div>
-    <div class="beer-meta">Inner Voice &middot; West Coast IPA &middot; 6.5%</div>
-    <div class="beer-desc">Mosaic, Simcoe, and Citra Cryo hops. Clear, piney, dry, firm bitterness.</div>
+    <div class="beer-name">Love is Real</div>
+    <div class="beer-meta">Inner Voice &middot; Double IPA &middot; 8% <span class="untappd">Untappd 4.23</span></div>
+    <div class="beer-desc">Mosaic, Nectaron, Simcoe Cryo. Dank citrus, hazy, pillowy mouthfeel.</div>
+    <div class="paired-with"><span class="label">Paired with </span>Hypnotize — Notorious B.I.G. &middot; T.R.O.Y. — Pete Rock &amp; CL Smooth</div>
     <div class="rating-row">
       <span class="rating-label">Rating</span>
       <div class="beer-circles">
@@ -359,6 +383,7 @@
     <div class="beer-name">Mango Lassi Sunset</div>
     <div class="beer-meta">Inner Voice &middot; Smoothie Sour &middot; 6.0% <span class="untappd">Untappd 4.29</span></div>
     <div class="beer-desc">Mega fruited with mango puree and fresh coconut. Tropical, tart, creamy.</div>
+    <div class="paired-with"><span class="label">Paired with </span>Peace Blossom Boogy — Babe Rainbow &middot; GOOD TIMES — Jungle</div>
     <div class="rating-row">
       <span class="rating-label">Rating</span>
       <div class="beer-circles">
@@ -378,11 +403,12 @@
 
 <!-- Beer 6 -->
 <div class="beer-card">
-  <div class="beer-num"><img src="images/abraxas.jpeg" alt="">6</div>
+  <div class="beer-num"><img src="images/coracoid.jpeg" alt="">6</div>
   <div class="beer-info">
-    <div class="beer-name">Perennial Abraxas</div>
-    <div class="beer-meta">Perennial Artisan Ales &middot; Imperial Stout &middot; 10% <span class="untappd">Untappd 4.40</span></div>
-    <div class="beer-desc">The birthday closer. Ancho chili, cacao nibs, vanilla, cinnamon. Like Mexican hot chocolate in a glass.</div>
+    <div class="beer-name">Fonta Flora Coracoid</div>
+    <div class="beer-meta">Fonta Flora Brewery &middot; Barrel-Aged Blend &middot; 14% <span class="untappd">Untappd 4.32</span></div>
+    <div class="beer-desc">The birthday closer. Barrel-aged barleywine meets imperial stout. Chocolate raisin, vanilla, bourbon.</div>
+    <div class="paired-with"><span class="label">Paired with </span>Sound and Vision — David Bowie &middot; This Must Be the Place — Talking Heads</div>
     <div class="rating-row">
       <span class="rating-label">Rating</span>
       <div class="beer-circles">
@@ -402,9 +428,19 @@
 
 <div class="footer">
   <p class="cheers">Cheers to 50, Matt!</p>
-  <div class="qr-section">
-    <img src="images/untappd-qr.png" alt="Untappd QR Code">
-    <div class="qr-label">Scan to find<br>these beers on<br>Untappd<br><a href="https://untappd.com/user/samdengler/lists/13782328" style="color:#888;font-size:5pt;">untappd.com/user/samdengler/lists/13782328</a></div>
+  <div class="qr-row">
+    <div class="qr-item">
+      <img src="images/site-qr.png" alt="Event Site QR">
+      <div class="qr-label">Tasting</div>
+    </div>
+    <div class="qr-item">
+      <img src="images/untappd-qr.png" alt="Untappd QR">
+      <div class="qr-label">Untappd</div>
+    </div>
+    <div class="qr-item">
+      <img src="images/spotify-qr.png" alt="Spotify QR">
+      <div class="qr-label">Playlist</div>
+    </div>
   </div>
 </div>
 

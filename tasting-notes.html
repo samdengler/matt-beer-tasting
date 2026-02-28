@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tasting Notes - A Few Small Beers</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Libre+Baskerville:ital@0;1&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    color: #1a1a1a;
+    background: #1a1a1a;
+  }
+
+  .slide {
+    min-height: 100vh;
+    min-height: 100dvh;
+    background: #f5f0eb;
+    padding: 1.5rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    scroll-snap-align: start;
+  }
+
+  .slide + .slide {
+    border-top: 4px solid #1a1a1a;
+  }
+
+  .slide-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid #1a1a1a;
+  }
+
+  .slide-header img {
+    width: 56px;
+    height: 56px;
+    object-fit: cover;
+    border-radius: 6px;
+    flex-shrink: 0;
+  }
+
+  .slide-header .num {
+    font-family: 'Oswald', Impact, sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: #ccc;
+    line-height: 1;
+    flex-shrink: 0;
+    width: 2rem;
+  }
+
+  .slide-header .title-block {
+    min-width: 0;
+  }
+
+  .slide-header h2 {
+    font-family: 'Oswald', Impact, sans-serif;
+    font-weight: 700;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.1;
+  }
+
+  .slide-header .meta {
+    font-size: 0.7rem;
+    color: #666;
+    margin-top: 0.15rem;
+  }
+
+  .notes {
+    flex: 1;
+    font-size: 0.85rem;
+    line-height: 1.55;
+    color: #333;
+  }
+
+  .notes h3 {
+    font-family: 'Oswald', Impact, sans-serif;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #999;
+    margin-top: 1rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .notes h3:first-child {
+    margin-top: 0;
+  }
+
+  .notes p {
+    margin-bottom: 0.5rem;
+  }
+
+  .notes .kicker {
+    font-style: italic;
+    color: #666;
+    font-size: 0.8rem;
+    margin-top: 0.75rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid #ddd;
+  }
+
+  .notes strong {
+    color: #1a1a1a;
+  }
+
+  .slide-nav {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding-top: 0.5rem;
+  }
+
+  .slide-nav a {
+    font-family: 'Oswald', Impact, sans-serif;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #999;
+    text-decoration: none;
+    padding: 0.25rem 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+
+  .slide-nav a.current {
+    color: #1a1a1a;
+    border-color: #1a1a1a;
+  }
+
+  html {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+  }
+
+  @media print {
+    .slide { page-break-after: always; min-height: auto; padding: 0.5in; }
+    .slide:last-child { page-break-after: avoid; }
+    .slide-nav { display: none; }
+    html { scroll-snap-type: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- BEER 1 -->
+<div class="slide" id="beer1">
+  <div class="slide-header">
+    <img src="images/cold-slice.jpeg" alt="">
+    <div class="title-block">
+      <h2>Cold Slice</h2>
+      <div class="meta">Inner Voice &middot; American Lager &middot; 4.5%</div>
+    </div>
+  </div>
+  <div class="notes">
+    <h3>The Brewery</h3>
+    <p>Inner Voice is in downtown Decatur, founded by <strong>Rhett Caseman and Josh Johnson</strong> — both former brewers at Monday Night Brewing. The name comes from a <strong>Funkadelic deep cut</strong>: George Clinton's "Good Thoughts, Bad Thoughts." They signed a lease in <strong>January 2020</strong>, then COVID happened. They finally opened in September 2021. You'll hear more about them — three of tonight's six beers are theirs.</p>
+
+    <h3>The Beer</h3>
+    <p>Cold Slice is their <strong>American lager</strong> — corn and barley, naturally carbonated, super crisp. Inner Voice has <strong>Brainwave Pizza</strong> inside the brewery, and this beer was built to be the perfect pizza companion. Think of it as a <strong>craft brewery's love letter to the classic American lager</strong> — same easy-drinking character, but made with actual care.</p>
+
+    <h3>Why We're Starting Here</h3>
+    <p>Every good tasting starts with something crisp and clean to <strong>calibrate your palate</strong>. At 4.5%, this is the lightest beer tonight and the simplest. Everything after this will be measured against it — and the lineup gets progressively wilder from here.</p>
+
+    <p class="kicker">Tell them: "This is your palate calibration. Remember what this tastes like, because in about an hour you'll be drinking a 14% barrel-aged blend and wondering how we got here."</p>
+  </div>
+  <div class="slide-nav">
+    <a href="#beer1" class="current">1</a>
+    <a href="#beer2">2</a>
+    <a href="#beer3">3</a>
+    <a href="#beer4">4</a>
+    <a href="#beer5">5</a>
+    <a href="#beer6">6</a>
+  </div>
+</div>
+
+<!-- BEER 2 -->
+<div class="slide" id="beer2">
+  <div class="slide-header">
+    <img src="images/chimay.jpeg" alt="">
+    <div class="title-block">
+      <h2>Chimay Cinq Cents</h2>
+      <div class="meta">Scourmont Abbey &middot; Belgian Tripel &middot; 8%</div>
+    </div>
+  </div>
+  <div class="notes">
+    <h3>The Monks</h3>
+    <p>Chimay is one of only <strong>~14 certified Trappist breweries in the world</strong>. To earn the label, monks at Scourmont Abbey must directly brew or oversee production, and all profits fund the monastery and charity. They've been brewing since <strong>1862</strong>. This isn't marketing — it's a vow.</p>
+
+    <h3>The Name</h3>
+    <p><strong>"Cinq Cents" means "Five Hundred"</strong> — commemorating the 500th anniversary of the town of Chimay in 1986. It's the white-capped bottle in the Chimay color-coded family: Red (Premi&egrave;re, 7% dubbel), White (this one, 8% tripel), Blue (Grande R&eacute;serve, 9% dark strong ale), and Gold (Dor&eacute;e, 4.8% — originally brewed only for the monks' own table).</p>
+
+    <h3>The Beer</h3>
+    <p>At 8% ABV, this is golden and <strong>deceptively drinkable</strong>. The Belgian yeast produces fruity esters — apricot, pear — with a peppery spice and a dry finish. Trappist monks essentially <strong>pioneered the Tripel style</strong>. This is the textbook example.</p>
+
+    <p class="kicker">Tell them: "This beer was brewed by monks who took a vow of silence, poverty, and apparently great taste. 163 years of practice tends to help."</p>
+  </div>
+  <div class="slide-nav">
+    <a href="#beer1">1</a>
+    <a href="#beer2" class="current">2</a>
+    <a href="#beer3">3</a>
+    <a href="#beer4">4</a>
+    <a href="#beer5">5</a>
+    <a href="#beer6">6</a>
+  </div>
+</div>
+
+<!-- BEER 3 -->
+<div class="slide" id="beer3">
+  <div class="slide-header">
+    <img src="images/lora.jpeg" alt="">
+    <div class="title-block">
+      <h2>Fair Isle Lora</h2>
+      <div class="meta">Fair Isle Brewing &middot; Berry Field Blend &middot; 3.9%</div>
+    </div>
+  </div>
+  <div class="notes">
+    <h3>The Brewery</h3>
+    <p>Fair Isle is in Seattle's Ballard neighborhood, and they <strong>only make farmhouse ales</strong>. No IPAs, no stouts, no hedging. Founded by Andrew Pogue, who calls his team <strong>"shepherds of wild and feral yeasts"</strong> — they cultivate house blends of wild microorganisms instead of using commercial strains. Their yeast culture was originally harvested from <strong>yarrow in Yakima and elderflowers near the Ballard Locks</strong>.</p>
+
+    <h3>The Piquette Trick</h3>
+    <p>Lora is inspired by <strong>"piquette"</strong> — an old winemaking practice of adding water to already-pressed grape skins for a second, lighter fermentation. Fair Isle applies this to beer: they re-use fruit (raspberries, boysenberries) that already went through a primary brewing run, getting <strong>a second life of flavor from ingredients most breweries would discard</strong>. Over 95% of their ingredients are locally sourced — the berries come from Sidhu Farms in Washington.</p>
+
+    <h3>The Grisette</h3>
+    <p>This is technically a <strong>grisette</strong> — a historically low-ABV Belgian style brewed for miners and farmworkers. At 3.9%, it stays true to that sessionable, refreshing character while adding complexity through <strong>wild and feral yeast fermentation</strong>. It's a snapshot of the Pacific Northwest in a glass.</p>
+
+    <p class="kicker">Tell them: "These brewers foraged their own yeast from wildflowers, then made a beer from recycled fruit using a technique borrowed from winemakers. At 3.9%, it's the lightest beer tonight and probably the most interesting."</p>
+  </div>
+  <div class="slide-nav">
+    <a href="#beer1">1</a>
+    <a href="#beer2">2</a>
+    <a href="#beer3" class="current">3</a>
+    <a href="#beer4">4</a>
+    <a href="#beer5">5</a>
+    <a href="#beer6">6</a>
+  </div>
+</div>
+
+<!-- BEER 4 -->
+<div class="slide" id="beer4">
+  <div class="slide-header">
+    <img src="images/love-is-real.jpeg" alt="">
+    <div class="title-block">
+      <h2>Love is Real</h2>
+      <div class="meta">Inner Voice &middot; Double IPA &middot; 8%</div>
+    </div>
+  </div>
+  <div class="notes">
+    <h3>The Brewery</h3>
+    <p>Inner Voice is in downtown Decatur, founded by <strong>Rhett Caseman and Josh Johnson</strong> — both former brewers at Monday Night Brewing. The name comes from a <strong>Funkadelic deep cut</strong>: George Clinton's "Good Thoughts, Bad Thoughts." They listened, quit their jobs, and signed a lease in <strong>January 2020</strong>. Then COVID happened. They finally opened in September 2021.</p>
+
+    <h3>The Hops</h3>
+    <p>Love is Real is brewed with <strong>Mosaic, Nectaron, and Simcoe Cryo</strong> — three hops prized for tropical and dank citrus character. "Cryo" means the Simcoe was <strong>freeze-processed to concentrate the lupulin oils</strong>, giving more intense flavor with less vegetal harshness. At 8%, this is a hazy double IPA that hits bold but smooth.</p>
+
+    <h3>The Natural Carbonation</h3>
+    <p>Love is Real is <strong>naturally carbonated</strong> — meaning it undergoes conditioning rather than force carbonation. This produces <strong>finer, softer bubbles</strong> and gives a double IPA a surprisingly pillowy mouthfeel despite the 8% ABV. After an American lager, a Trappist tripel, and a wild berry blend, this is where we jump into hop country.</p>
+
+    <p class="kicker">Tell them: "Named their brewery after a Funkadelic lyric, quit their jobs right before a pandemic, and naturally carbonate a double IPA. Dank citrus, soft bubbles, no shortcuts."</p>
+  </div>
+  <div class="slide-nav">
+    <a href="#beer1">1</a>
+    <a href="#beer2">2</a>
+    <a href="#beer3">3</a>
+    <a href="#beer4" class="current">4</a>
+    <a href="#beer5">5</a>
+    <a href="#beer6">6</a>
+  </div>
+</div>
+
+<!-- BEER 5 -->
+<div class="slide" id="beer5">
+  <div class="slide-header">
+    <img src="images/mango-lassi.jpeg" alt="">
+    <div class="title-block">
+      <h2>Mango Lassi Sunset</h2>
+      <div class="meta">Inner Voice &middot; Smoothie Sour &middot; 6.0%</div>
+    </div>
+  </div>
+  <div class="notes">
+    <h3>What Is This</h3>
+    <p>Okay, this is the wild card. A <strong>"smoothie sour"</strong> is exactly what it sounds like — a sour beer blended with absurd amounts of fruit puree until it has the consistency of, well, a smoothie. This is the most polarizing style in craft beer right now. Beer purists hate it. Everyone else loves it.</p>
+    <p>This one is inspired by a <strong>mango lassi</strong> — the Indian yogurt drink. Loaded with mango puree and fresh coconut. Tropical, tart, creamy. It's basically a cocktail pretending to be a beer.</p>
+
+    <h3>The Context</h3>
+    <p>Inner Voice makes a bigger version called <strong>Mega Mondo Mango Lassi at 8%</strong> that won an <strong>Untappd Silver Award in 2025</strong>. This is the 6% "sessionable" take — same concept, slightly less danger.</p>
+    <p>The smoothie sour trend emerged around 2018-2019 and divided the beer world in half. Some brewers think it's an abomination. Others think it's the most exciting thing to happen to beer in decades. The argument is essentially: <strong>does it have to taste like "beer" to be beer?</strong></p>
+
+    <h3>Why It's Here</h3>
+    <p>After a lager, a Trappist ale, a wild berry blend, and a double IPA, we needed something that blows up the format. This is that beer. It's also a crowd-pleaser — the person at this table who says "I don't really like beer" is about to have their mind changed.</p>
+
+    <p class="kicker">Tell them: "If someone tells you this isn't real beer, tell them neither was pilsner in 1841. Every great style started as something that annoyed the old guard."</p>
+  </div>
+  <div class="slide-nav">
+    <a href="#beer1">1</a>
+    <a href="#beer2">2</a>
+    <a href="#beer3">3</a>
+    <a href="#beer4">4</a>
+    <a href="#beer5" class="current">5</a>
+    <a href="#beer6">6</a>
+  </div>
+</div>
+
+<!-- BEER 6 -->
+<div class="slide" id="beer6">
+  <div class="slide-header">
+    <img src="images/coracoid.jpeg" alt="">
+    <div class="title-block">
+      <h2>Fonta Flora Coracoid</h2>
+      <div class="meta">Fonta Flora Brewery &middot; Barrel-Aged Blend &middot; 14%</div>
+    </div>
+  </div>
+  <div class="notes">
+    <h3>The Blend</h3>
+    <p>Coracoid is not a single beer — it's a <strong>blend of two barrel-aged beers</strong>: an 18-month double barrel-aged English barleywine and a bourbon barrel-aged imperial stout. The barleywine brings the backbone; the stout adds depth. Blending is a brewer's highest art — making the whole greater than the sum of its parts.</p>
+
+    <h3>The Brewery</h3>
+    <p>Fonta Flora is in <strong>Morganton, North Carolina</strong>, in the Appalachian foothills. They're one of America's pioneering <strong>terroir-driven</strong> farmhouse breweries — using locally foraged and farm-grown ingredients. Their entire philosophy is that beer should taste like a <strong>place</strong>, not just a recipe. Craft Beer &amp; Brewing scored Coracoid <strong>90/100</strong>.</p>
+
+    <h3>The Birthday Closer</h3>
+    <p>At <strong>14% ABV</strong>, sip this one. The tasting notes are a journey: <strong>chocolate-covered raisins, cured pipe tobacco, vanilla-soaked sherry, bourbon-soaked fig jam</strong>. It evolves in the glass as it warms. This is how you close a birthday tasting.</p>
+
+    <p class="kicker">Tell them: "Two barrel-aged beers blended into one, from a farmhouse brewery in the Appalachian mountains. 14 percent. Sip it slow. Happy birthday, Matt."</p>
+  </div>
+  <div class="slide-nav">
+    <a href="#beer1">1</a>
+    <a href="#beer2">2</a>
+    <a href="#beer3">3</a>
+    <a href="#beer4">4</a>
+    <a href="#beer5">5</a>
+    <a href="#beer6" class="current">6</a>
+  </div>
+</div>
+
+</body>
+</html>
