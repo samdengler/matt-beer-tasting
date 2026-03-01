@@ -144,10 +144,40 @@
   }
 
   @media print {
-    .slide { page-break-after: always; min-height: auto; padding: 0.5in; }
-    .slide:last-child { page-break-after: avoid; }
-    .slide-nav { display: none; }
+    @page { size: letter; margin: 0.4in 0.5in; }
     html { scroll-snap-type: none; }
+    body { background: #fff; font-size: 9pt; }
+    .slide {
+      display: block;
+      min-height: auto;
+      padding: 0.15in 0;
+      background: #fff;
+      border-top: none;
+    }
+    .slide + .slide {
+      border-top: 1px solid #ccc;
+    }
+    #beer4 {
+      break-before: page;
+      border-top: none;
+    }
+    .slide-nav { display: none; }
+    .slide-header {
+      display: block;
+      margin-bottom: 0.08in;
+      padding-bottom: 0.08in;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    .slide-header img { width: 36px; height: 36px; float: left; margin-right: 8px; }
+    .slide-header .title-block { display: block; }
+    .slide-header h2 { font-size: 11pt; }
+    .slide-header .meta { font-size: 7.5pt; color: #333; }
+    .notes { display: block; font-size: 8.5pt; line-height: 1.35; color: #000; clear: both; }
+    .notes h3 { font-size: 8pt; color: #222; margin-top: 0.4rem; margin-bottom: 0.1rem; }
+    .notes h3:first-child { margin-top: 0; }
+    .notes p { margin-bottom: 0.2rem; color: #000; }
+    .notes strong { color: #000; }
+    .notes .kicker { font-size: 8pt; color: #222; margin-top: 0.3rem; padding-top: 0.2rem; }
   }
 </style>
 </head>
