@@ -3,6 +3,7 @@ __pycache__/
 *.pyc
 .venv/
 rating-sheet.pdf
+!public/rating-sheet.pdf
 untappd-qr.svg
 dist/
 _external/*
