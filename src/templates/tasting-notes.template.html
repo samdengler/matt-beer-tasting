@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tasting Notes - A Few Small Beers</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Libre+Baskerville:ital@0;1&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    color: #1a1a1a;
+    background: #1a1a1a;
+  }
+
+  .slide {
+    min-height: 100vh;
+    min-height: 100dvh;
+    background: #f5f0eb;
+    padding: 1.5rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    scroll-snap-align: start;
+  }
+
+  .slide + .slide {
+    border-top: 4px solid #1a1a1a;
+  }
+
+  .slide-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid #1a1a1a;
+  }
+
+  .slide-header img {
+    width: 56px;
+    height: 56px;
+    object-fit: cover;
+    border-radius: 6px;
+    flex-shrink: 0;
+  }
+
+  .slide-header .num {
+    font-family: 'Oswald', Impact, sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: #ccc;
+    line-height: 1;
+    flex-shrink: 0;
+    width: 2rem;
+  }
+
+  .slide-header .title-block {
+    min-width: 0;
+  }
+
+  .slide-header h2 {
+    font-family: 'Oswald', Impact, sans-serif;
+    font-weight: 700;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.1;
+  }
+
+  .slide-header .meta {
+    font-size: 0.7rem;
+    color: #666;
+    margin-top: 0.15rem;
+  }
+
+  .notes {
+    flex: 1;
+    font-size: 0.85rem;
+    line-height: 1.55;
+    color: #333;
+  }
+
+  .notes h3 {
+    font-family: 'Oswald', Impact, sans-serif;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #999;
+    margin-top: 1rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .notes h3:first-child {
+    margin-top: 0;
+  }
+
+  .notes p {
+    margin-bottom: 0.5rem;
+  }
+
+  .notes .kicker {
+    font-style: italic;
+    color: #666;
+    font-size: 0.8rem;
+    margin-top: 0.75rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid #ddd;
+  }
+
+  .notes strong {
+    color: #1a1a1a;
+  }
+
+  .slide-nav {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding-top: 0.5rem;
+  }
+
+  .slide-nav a {
+    font-family: 'Oswald', Impact, sans-serif;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #999;
+    text-decoration: none;
+    padding: 0.25rem 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+
+  .slide-nav a.current {
+    color: #1a1a1a;
+    border-color: #1a1a1a;
+  }
+
+  html {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+  }
+
+  .paired-songs { display: none; }
+  .print-title { display: none; }
+
+  @media print {
+    @page { size: letter; margin: 0.25in 0.4in; }
+    html { scroll-snap-type: none; }
+    body { display: block; background: #fff; font-size: 9.5pt; text-align: left; }
+    .print-title {
+      display: block;
+      font-family: 'Oswald', Impact, sans-serif;
+      font-weight: 700;
+      font-size: 14pt;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      text-align: center;
+      margin-bottom: 0.06in;
+      padding-bottom: 0.04in;
+      border-bottom: 2px solid #1a1a1a;
+    }
+    .slide {
+      display: block;
+      min-height: auto;
+      padding: 0.1in 0;
+      background: #fff;
+      border-top: none;
+      width: 100%;
+      text-align: left;
+    }
+    .slide + .slide {
+      border-top: 1px solid #ccc;
+    }
+    #beer4 {
+      break-before: page;
+      border-top: none;
+    }
+    .slide-nav { display: none; }
+    .slide-header {
+      display: block;
+      margin-bottom: 0.06in;
+      padding-bottom: 0.06in;
+      border-bottom: 1px solid #1a1a1a;
+      overflow: hidden;
+    }
+    .slide-header img { width: 40px; height: 40px; float: left; margin-right: 8px; }
+    .slide-header .title-block { display: block; }
+    .slide-header h2 { font-size: 12pt; }
+    .slide-header .meta { font-size: 8pt; color: #333; }
+    .paired-songs {
+      display: block;
+      float: right;
+      text-align: right;
+      font-size: 7.5pt;
+      color: #222;
+      font-style: italic;
+      line-height: 1.4;
+      margin-top: 0.02in;
+    }
+    .notes { display: block; font-size: 9pt; line-height: 1.32; color: #000; clear: both; }
+    .notes h3 { font-size: 8.5pt; color: #222; margin-top: 0.3rem; margin-bottom: 0.05rem; }
+    .notes h3:first-child { margin-top: 0; }
+    .notes p { margin-bottom: 0.12rem; color: #000; }
+    .notes strong { color: #000; }
+    .notes .kicker { font-size: 8pt; color: #222; margin-top: 0.2rem; padding-top: 0.12rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="print-title">A Few Small Beers</div>
+
+<!-- {{SLIDES}} -->
+
+</body>
+</html>

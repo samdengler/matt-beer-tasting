@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>A Few Small Beers - Matt's 50th</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Libre+Baskerville:ital@0;1&display=swap');
+
+  @page {
+    size: 4.25in 11in;
+    margin: 0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 4.25in;
+    min-height: 11in;
+    margin: 0 auto;
+    padding: 0.3in 0.3in 0.25in;
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: 7.5pt;
+    color: #1a1a1a;
+    background: #fff;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: 0.1in;
+    padding-bottom: 0.08in;
+    border-bottom: 2px solid #1a1a1a;
+  }
+
+  .header img {
+    display: none;
+  }
+
+  .untappd {
+    font-family: 'Oswald', Impact, sans-serif;
+    font-size: 7.5pt;
+    color: #333;
+    margin-left: 0.04in;
+  }
+
+  .header h1 {
+    font-family: 'Oswald', Impact, sans-serif;
+    font-weight: 700;
+    font-size: 20pt;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 1;
+    margin-bottom: 0.03in;
+  }
+
+  .header .subtitle {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-style: italic;
+    font-size: 9pt;
+    color: #333;
+  }
+
+  .beer-card {
+    padding: 0.08in 0;
+    display: flex;
+    gap: 0.06in;
+  }
+
+  .beer-card:last-of-type {
+    padding-bottom: 0;
+  }
+
+  .beer-num {
+    font-family: 'Oswald', Impact, sans-serif;
+    font-weight: 700;
+    font-size: 10pt;
+    color: #999;
+    line-height: 1;
+    flex-shrink: 0;
+    width: 0.38in;
+    text-align: center;
+  }
+
+  .beer-num img {
+    width: 0.36in;
+    height: 0.36in;
+    object-fit: cover;
+    border-radius: 3px;
+    display: block;
+    margin: 0 auto 0.02in;
+  }
+
+  .beer-info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .beer-name {
+    font-family: 'Oswald', Impact, sans-serif;
+    font-weight: 700;
+    font-size: 11pt;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .beer-meta {
+    font-size: 8pt;
+    color: #222;
+    margin-bottom: 0.02in;
+  }
+
+  .beer-desc {
+    font-size: 8pt;
+    font-style: italic;
+    color: #333;
+    line-height: 1.3;
+    margin-bottom: 0.02in;
+  }
+
+  .paired-with {
+    font-size: 6.5pt;
+    color: #666;
+    line-height: 1.3;
+    margin-bottom: 0.04in;
+  }
+
+  .paired-with .label {
+    font-family: 'Oswald', Impact, sans-serif;
+    font-size: 6pt;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+
+  .rating-row {
+    display: flex;
+    align-items: center;
+    gap: 0.04in;
+    margin-bottom: 0.03in;
+  }
+
+  .rating-label {
+    font-family: 'Oswald', Impact, sans-serif;
+    font-size: 7.5pt;
+    text-transform: uppercase;
+    color: #333;
+    width: 0.5in;
+    flex-shrink: 0;
+  }
+
+  .beer-circles {
+    display: flex;
+    gap: 0.05in;
+  }
+
+  .beer-icon {
+    width: 0.2in;
+    height: 0.24in;
+    flex-shrink: 0;
+  }
+
+  .beer-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .notes-line {
+    display: flex;
+    align-items: baseline;
+    gap: 0.04in;
+  }
+
+  .notes-label {
+    font-family: 'Oswald', Impact, sans-serif;
+    font-size: 7.5pt;
+    text-transform: uppercase;
+    color: #333;
+    flex-shrink: 0;
+  }
+
+  .notes-blank {
+    flex-grow: 1;
+    border-bottom: 1px solid #777;
+    height: 0.12in;
+  }
+
+  .footer {
+    text-align: center;
+    margin-top: 0.1in;
+    padding-top: 0.06in;
+    border-top: 2px solid #1a1a1a;
+  }
+
+  .footer p {
+    font-size: 6.5pt;
+    color: #555;
+    font-style: italic;
+  }
+
+  .footer .cheers {
+    font-family: 'Oswald', Impact, sans-serif;
+    font-size: 9pt;
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #1a1a1a;
+    margin-top: 0.02in;
+  }
+
+  .footer .qr-row {
+    display: flex;
+    justify-content: center;
+    gap: 0.15in;
+    margin-top: 0.06in;
+  }
+
+  .footer .qr-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.02in;
+  }
+
+  .footer .qr-item img {
+    width: 0.5in;
+    height: 0.5in;
+  }
+
+  .footer .qr-label {
+    font-family: 'Oswald', Impact, sans-serif;
+    font-size: 7pt;
+    text-transform: uppercase;
+    color: #444;
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  .name-line {
+    text-align: center;
+    margin-top: 0.06in;
+    margin-bottom: 0.06in;
+  }
+
+  .name-line span {
+    font-family: 'Oswald', Impact, sans-serif;
+    font-size: 8pt;
+    text-transform: uppercase;
+    color: #333;
+  }
+
+  .name-blank {
+    display: inline-block;
+    width: 2in;
+    border-bottom: 1px solid #777;
+    margin-left: 0.05in;
+  }
+
+  @media print {
+    body {
+      width: 4.25in;
+      min-height: 11in;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <img src="images/sergio.png" alt="A Few Small Beers">
+  <h1>A Few Small Beers</h1>
+  <div class="subtitle">Matt's 50th Birthday Beer Tasting &middot; February 28, 2026</div>
+</div>
+
+<div class="name-line">
+  <span>Your Name</span><span class="name-blank"></span>
+</div>
+
+<!-- {{BEER_CARDS}} -->
+
+<div class="footer">
+  <p class="cheers">Cheers to 50, Matt!</p>
+  <div class="qr-row">
+    <div class="qr-item">
+      <img src="images/site-qr.png" alt="Event Site QR">
+      <div class="qr-label">Tasting</div>
+    </div>
+    <div class="qr-item">
+      <img src="images/untappd-qr.png" alt="Untappd QR">
+      <div class="qr-label">Untappd</div>
+    </div>
+    <div class="qr-item">
+      <img src="images/spotify-qr.png" alt="Spotify QR">
+      <div class="qr-label">Playlist</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

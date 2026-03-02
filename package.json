@@ -3,9 +3,19 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "setup": "npm install && uv sync",
+    "setup:site": "mkdir -p site/public && test -L site/images || ln -s ../src/images site/images",
+    "dev": "npm run generate && vite",
+    "build": "npm run generate && vite build",
+    "preview": "vite preview",
+    "generate": "npm run setup:site && python3 bin/build-index.py && python3 bin/build-tasting-notes.py && python3 bin/build-rating-sheet.py",
+    "generate:index": "npm run setup:site && python3 bin/build-index.py",
+    "generate:notes": "npm run setup:site && python3 bin/build-tasting-notes.py",
+    "generate:rating": "npm run setup:site && python3 bin/build-rating-sheet.py",
+    "pdf": "npm run pdf:notes && npm run pdf:rating",
+    "pdf:notes": "bin/to-pdf.sh site/tasting-notes.html",
+    "pdf:rating": "bin/to-pdf.sh site/rating-sheet.html && cp site/rating-sheet.pdf site/public/",
+    "all": "npm run generate && npm run pdf && npm run build"
   },
   "devDependencies": {
     "vite": "^7.3.1"
